@@ -47,11 +47,11 @@ const Navbar = props => {
     const authenticatedNavBar = () => {
         return (
             <>
-                <Link to="/">
+                {/* <Link to="/">
                     <li className="nav-item nav-link">
                         Home
                     </li>
-                </Link>
+                </Link> */}
                 {/* <Link to="/incomingupdates">
                     <li className="nav-item nav-link">
                         Incoming Updates

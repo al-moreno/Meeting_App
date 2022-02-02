@@ -52,8 +52,11 @@ const IncomingUpdates = prop => {
     }
 
     return (
-        <div>
+        <div className='container'>
+            <div className="mt-5">
             <ul className="list-group">
+                
+                
                 {
                     incomingupdates.map(incomingupdate => {
                         return <IncomingUpdateItem key={incomingupdate._id} incomingupdate={incomingupdate} />
@@ -67,11 +70,12 @@ const IncomingUpdates = prop => {
                     name='incomingupdate'
                     value={incomingupdate.name}
                     onChange={onChange}
-                    className="form-control"
+                    className="form-control mb-3"
                     placeholder='Please enter incoming updates' />
-                <button className="btn btn-lg btn-primary btn-block" type='submit'>Submit</button>
+                <button className="btn btn-primary" type='submit'>Submit</button>
             </form>
             {message ? <Message message={message} /> : null}
+        </div>
         </div>
     );
 
