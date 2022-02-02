@@ -1,34 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 
-const MeetingNav = () => (
-    <div>
-        <ul className="nav nav-tabs" id="myTab" role="tablist">
-            <li className="nav-item">
-                <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Positive Start</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Incoming Updates</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Almanac</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Quarterly Goals</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Weeds</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Wrap Up</a>
-            </li>
 
-        </ul>
-        <div className="tab-content" id="myTabContent">
-            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-            <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div>
-    </div>
-)
+const NavLink = ({to, children}) =>{
+    const location = useLocation();
+    return <Nav.Link as={Link} to={to} active={location.pathname === to}>{children}</Nav.Link>
+
+}
+
+const MeetingNav = () => {
+
+    
+
+    return (
+        <Nav variant="tabs" >
+            <Nav.Item>
+                <NavLink  to="/positivestart">Positive Start</NavLink>
+            </Nav.Item>
+            <Nav.Item>
+            <NavLink  to="/incomingupdates">Incoming Updates</NavLink>
+            </Nav.Item>
+            <Nav.Item>
+            <NavLink  to="/almanac">Almanac</NavLink>
+            </Nav.Item>
+            <Nav.Item>
+            <NavLink  to="/quarterlygoals">Quarterly Goals</NavLink>
+            </Nav.Item>
+            <Nav.Item>
+            <NavLink  to="/weeds">Weeds</NavLink>
+            </Nav.Item>
+            <Nav.Item>
+            <NavLink  to="/wrapup">Wrap Up</NavLink>
+            </Nav.Item>
+
+
+        </Nav>
+    )
+}
 
 export default MeetingNav;

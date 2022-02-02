@@ -46,7 +46,7 @@ const Register = props => {
             if (!message.msgError) {
                 timerID = setTimeout(() => {
                     navigate('/login');
-                }, 1000)
+                } )
             }
         });
     }
