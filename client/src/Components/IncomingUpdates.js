@@ -1,33 +1,33 @@
 import React, { useState, useContext, useEffect } from 'react';
-import TodoItem from './TodoItem';
+import IncomingUpdateItem from './IncomingUpdateItem';
 import Message from './Message';
-import TodoService from '../Services/TodoService';
+import IncomingUpdateService from '../Services/IncomingUpdateService';
 import AuthContext from '../Context/AuthContext';
 
 
 // functional component
-const Todos = prop => {
-    const [todo, setTodo] = useState({ name: '' });
-    const [todos, setTodos] = useState([]);
+const IncomingUpdates = prop => {
+    const [incomingupdate, setIncomingUpdate] = useState({ name: '' });
+    const [incomingupdates, setIncomingUpdates] = useState([]);
     const [message, setMessage] = useState(null);
     const authContext = useContext(AuthContext);
 
     useEffect(() => {
-        TodoService.getTodos().then(data => {
-            setTodos(data.todos);
+        IncomingUpdateService.getIncomingUpdates().then(data => {
+            setIncomingUpdates(data.incomingupdates);
         });
     }, []);
 
 
     const onSubmit = e => {
         e.preventDefault();
-        TodoService.postTodo(todo).then(data => {
+        IncomingUpdateService.postIncomingUpdate(incomingupdate).then(data => {
             const { message } = data;
             resetForm();
-            // if successfully created a todo
+            // if successfully created a incomingupdate
             if (!message.msgError) {
-                TodoService.getTodos().then(getData => {
-                    setTodos(getData.todos);
+                IncomingUpdateService.getIncomingUpdates().then(getData => {
+                    setIncomingUpdates(getData.incomingupdates);
                     setMessage(message);
                 });
             }
@@ -44,31 +44,31 @@ const Todos = prop => {
     }
 
     const onChange = e => {
-        setTodo({ name: e.target.value });
+        setIncomingUpdate({ name: e.target.value });
     }
 
     const resetForm = () => {
-        setTodo({ name: "" });
+        setIncomingUpdate({ name: "" });
     }
 
     return (
         <div>
             <ul className="list-group">
                 {
-                    todos.map(todo => {
-                        return <TodoItem key={todo._id} todo={todo} />
+                    incomingupdates.map(incomingupdate => {
+                        return <IncomingUpdateItem key={incomingupdate._id} incomingupdate={incomingupdate} />
                     })
                 }
             </ul>
             <br />
             <form onSubmit={onSubmit}>
-                <label htmlFor="todo"> Enter Todo</label>
+                <label htmlFor="incomingupdate"> Enter Incoming Updates</label>
                 <input type='text'
-                    name='todo'
-                    value={todo.name}
+                    name='incomingupdate'
+                    value={incomingupdate.name}
                     onChange={onChange}
                     className="form-control"
-                    placeholder='Please enter todos' />
+                    placeholder='Please enter incoming updates' />
                 <button className="btn btn-lg btn-primary btn-block" type='submit'>Submit</button>
             </form>
             {message ? <Message message={message} /> : null}
@@ -77,4 +77,4 @@ const Todos = prop => {
 
 };
 
-export default Todos;
+export default IncomingUpdates;

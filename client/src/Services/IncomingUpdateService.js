@@ -1,6 +1,6 @@
 export default {
-    getTodos: () => {
-        return fetch('/user/todos')
+    getIncomingUpdates: () => {
+        return fetch('/user/incomingupdates')
             .then(response => {
                 if (response.status !== 401) {
                     return response.json().then(data => data);
@@ -9,10 +9,10 @@ export default {
                     return { message: { msgBody: 'Unathorized' }, msgError: true };
             });
     },
-    postTodo: todo => {
-        return fetch('/user/todo', {
+    postIncomingUpdate: incomingupdate => {
+        return fetch('/user/incomingupdate', {
             method: 'post',
-            body: JSON.stringify(todo),
+            body: JSON.stringify(incomingupdate),
             headers: {
                 'Content-Type': 'application/json'
             }

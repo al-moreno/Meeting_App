@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Register from './Components/Register';
-import Todos from './Components/Todos';
+import IncomingUpdates from './Components/IncomingUpdates';
 import Admin from './Components/Admin';
 
 
@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/todos' roles={["user", "admin"]} element={<Todos />} />
+        <Route path='/incomingupdates' roles={["user", "admin"]} element={<IncomingUpdates />} />
         <Route path='/admin' roles={["admin"]} element={<Admin />} />
       </Routes>
     </Router>

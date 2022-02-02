@@ -22,7 +22,7 @@ const Login = props => {
             if (isAuthenticated) {
                 authContext.setUser(user);
                 authContext.setIsAuthenticated(isAuthenticated);
-                navigate('/todos');
+                navigate('/incomingupdates');
             }
             else
                 setMessage(message);
@@ -30,25 +30,47 @@ const Login = props => {
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <h3>Please sign in</h3>
-                <label htmlFor="username" className="sr-only">Username:</label>
-                <input type="text"
-                    name='username'
-                    onChange={onChange}
-                    className="form-control"
-                    placeholder="Enter Username" />
-                <label htmlFor="password" className="sr-only">Password:</label>
-                <input type="password"
-                    name='password'
-                    onChange={onChange}
-                    className="form-control"
-                    placeholder="Enter Password" />
-                <button className="btn btn-lg btn-primary btn-block" type='submit'>Log in</button>
-            </form>
-            {message ? <Message message={message} /> : null}
-        </div>
+        <section className="vh-100 bg-image">
+            <div className="mask d-flex align-items-center h-100 bg-dark">
+                <div className="container h-100">
+                    <div className="row d-flex justify-content-center align-items-center h-100">
+                        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div className="card">
+                                <div className="card-body p-5">
+                                    <form onSubmit={onSubmit}>
+                                        <h2 className="text-uppercase text-center mb-5">Login</h2>
+                                        <div className="form-outline mb-3">
+                                            <label htmlFor="username" className="form-label">Username:</label>
+                                            <input type="text" className="form-control form-control-lg"
+                                                name='username'
+                                                onChange={onChange}
+                                                className="form-control"
+                                                placeholder="Enter Username" />
+                                        </div>
+                                        <div className="form-outline mb-3">
+                                            <label htmlFor="password" className="form-label">Password:</label>
+                                            <input type="password" className="form-control form-control-lg"
+                                                name='password'
+                                                onChange={onChange}
+                                                className="form-control"
+                                                placeholder="Enter Password" />
+                                        </div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <button className="btn btn-lg btn-primary btn-block" type='submit'>Log in</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    {message ? <Message message={message} /> : null}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section >
     )
 };
 

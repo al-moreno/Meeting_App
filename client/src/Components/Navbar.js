@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthService from '../Services/AuthService';
 import { AuthContext } from '../Context/AuthContext';
+import Image from '../images/Eureka-logo.png';
 
 const Navbar = props => {
     const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const Navbar = props => {
             if (data.success) {
                 setUser(data.user);
                 setIsAuthenticated(false);
-                navigate("/home");
+                navigate("/");
             }
         });
     }
@@ -23,11 +24,11 @@ const Navbar = props => {
     const unauthenticatedNavBar = () => {
         return (
             <>
-                <Link to="/">
+                {/* <Link to="/">
                     <li className="nav-item nav-link">
                         Home
                     </li>
-                </Link>
+                </Link> */}
                 <Link to="/login">
                     <li className="nav-item nav-link">
                         Login
@@ -51,11 +52,11 @@ const Navbar = props => {
                         Home
                     </li>
                 </Link>
-                <Link to="/todos">
+                {/* <Link to="/incomingupdates">
                     <li className="nav-item nav-link">
-                        Todos
+                        Incoming Updates
                     </li>
-                </Link>
+                </Link> */}
                 {
                     user.role === "admin" ?
                         <Link to="/admin">
@@ -71,21 +72,16 @@ const Navbar = props => {
         )
     }
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link to='/'>
                     <div className="navbar-brand">
-                        Eureka Process
+                        <img src={Image} alt="..." class="img-thumbnail" />
                     </div>
-
                 </Link>
-
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        
+
                         {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
 
                     </ul>
@@ -96,7 +92,6 @@ const Navbar = props => {
             </div>
         </nav>
     )
-
 };
 
 export default Navbar;
