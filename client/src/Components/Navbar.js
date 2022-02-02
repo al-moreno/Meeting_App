@@ -1,20 +1,25 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import AuthService from '../Services/AuthService';
 import { AuthContext } from '../Context/AuthContext';
 
 const Navbar = props => {
     const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+
+    // resetting user 
     const onClickLogoutHandler = () => {
         AuthService.logout().then(data => {
             if (data.success) {
                 setUser(data.user);
                 setIsAuthenticated(false);
+                navigate("/home");
             }
         });
     }
 
+    // navbar to display if not authorized or logged in
     const unauthenticatedNavBar = () => {
         return (
             <>
@@ -37,6 +42,7 @@ const Navbar = props => {
         )
     }
 
+    // navbar to be deisplayed if logged in
     const authenticatedNavBar = () => {
         return (
             <>
@@ -79,10 +85,12 @@ const Navbar = props => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        
                         {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+
                     </ul>
                     <span className="navbar-text">
-                        Navbar text with an inline element
+                        Welcome
                     </span>
                 </div>
             </div>

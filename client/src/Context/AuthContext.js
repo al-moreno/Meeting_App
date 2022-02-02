@@ -15,7 +15,8 @@ export default ({ children }) => {
             setIsLoaded(true);
         });
 
-    }, [])
+    }, []);
+
     return (
         <div>
             {!isLoaded ? <h1>Loading...</h1> :
@@ -24,4 +25,4 @@ export default ({ children }) => {
                 </AuthContext.Provider>}
         </div>
     )
-};
+}
