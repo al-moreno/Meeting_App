@@ -5,7 +5,7 @@ const Almanac = () => (
         <div className="container" >
             <div className="jumbotron ">
                 <div className='d-flex justify-content-md-center align-items-center vh-100 '>
-                    <h1 className="display-1">PositiveStart</h1>
+                    <h1 className="display-1">Almanac</h1>
                     <p className="lead"></p>
                 </div>
             </div>

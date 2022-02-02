@@ -22,7 +22,7 @@ const Login = props => {
             if (isAuthenticated) {
                 authContext.setUser(user);
                 authContext.setIsAuthenticated(isAuthenticated);
-                navigate('/incomingupdates');
+                navigate('/positivestart');
             }
             else
                 setMessage(message);

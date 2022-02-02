@@ -21,7 +21,7 @@ const Navbar = props => {
     }
 
     // navbar to display if not authorized or logged in
-    const unauthenticatedNavBar = () => {
+    const UnauthenticatedNavBar = () => {
         return (
             <>
                 {/* <Link to="/">
@@ -44,7 +44,7 @@ const Navbar = props => {
     }
 
     // navbar to be deisplayed if logged in
-    const authenticatedNavBar = () => {
+    const AuthenticatedNavBar = () => {
         return (
             <>
                 {/* <Link to="/">
@@ -82,7 +82,7 @@ const Navbar = props => {
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+                        {!isAuthenticated ? <UnauthenticatedNavBar /> : <AuthenticatedNavBar />}
 
                     </ul>
                     <span className="navbar-text">
