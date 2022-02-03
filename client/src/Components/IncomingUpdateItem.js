@@ -2,15 +2,18 @@ import React from 'react';
 
 const IncomingUpdateItem = props => {
     return (
-        <span className="pb-2" >
-            <li className="list-group-item  ">
 
-                <input className="form-check-input me-1" type="checkbox" value="" aria-label="..." />
-
-                {props.incomingupdate.name}
-
-            </li>
-        </span>
+        <div class="card my-1">
+            <div class="card-header">
+            <h5 class="card-title">Created by: XYZ          On:          Updated On:</h5>
+            </div>
+            <div class="card-body">
+               
+                <p class="card-text">
+                    {props.incomingupdate.name}
+                </p>
+            </div>
+        </div>
     )
 };
 

@@ -54,15 +54,14 @@ const IncomingUpdates = prop => {
     return (
         <div className='container'>
             <div className="mt-5">
-            <ul className="list-group">
-                
+            <div className="list-group">
                 
                 {
                     incomingupdates.map(incomingupdate => {
                         return <IncomingUpdateItem key={incomingupdate._id} incomingupdate={incomingupdate} />
                     })
                 }
-            </ul>
+            </div>
             <br />
             <form onSubmit={onSubmit}>
                 <label htmlFor="incomingupdate"> Enter Incoming Updates</label>
