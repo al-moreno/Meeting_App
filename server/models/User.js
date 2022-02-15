@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -18,8 +19,8 @@ const UserSchema = new mongoose.Schema({
         required: true
 
     },
-    incomingupdates: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'IncomingUpdate'
+    meetingitems: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'MeetingItem'
     }]
 });
 

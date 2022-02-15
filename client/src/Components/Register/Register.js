@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthService from '../Services/AuthService';
-import Message from '../Components/Message';
+import AuthService from '../../Services/Auth';
+import Message from '../Message/Message';
 
 function Copyright(props) {
     return (
@@ -46,7 +46,7 @@ const Register = props => {
             if (!message.msgError) {
                 timerID = setTimeout(() => {
                     navigate('/login');
-                } )
+                })
             }
         });
     }
@@ -67,7 +67,6 @@ const Register = props => {
                                                 name='username'
                                                 value={user.username}
                                                 onChange={onChange}
-                                                className="form-control"
                                                 placeholder="Enter Username" />
                                         </div>
                                         <div className="form-outline mb-3">
@@ -76,7 +75,6 @@ const Register = props => {
                                                 name='password'
                                                 value={user.password}
                                                 onChange={onChange}
-                                                className="form-control"
                                                 placeholder="Enter Password" />
                                         </div>
                                         <div className="form-outline mb-3">
@@ -85,12 +83,11 @@ const Register = props => {
                                                 name='role'
                                                 value={user.role}
                                                 onChange={onChange}
-                                                className="form-control"
                                                 placeholder="Enter Role (Admin/User)" />
                                         </div>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col text-center">
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col text-center">
                                                     <button className="btn btn-lg btn-primary btn-block" type='submit'>Register</button>
                                                 </div>
                                             </div>

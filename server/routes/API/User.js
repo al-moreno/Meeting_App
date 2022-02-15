@@ -1,10 +1,8 @@
 const express = require('express');
 const userRouter = express.Router();
 const passport = require('passport');
-const passportConfig = require('../passport');
 const JWT = require('jsonwebtoken');
-const User = require('../models/User');
-const IncomingUpdate = require('../models/IncomingUpdate');
+const User = require('../../models/User');
 
 const signToken = userID => {
     return JWT.sign({
@@ -33,7 +31,6 @@ userRouter.post('/register', (req, res) => {
                     res.status(201).json({ message: { msgBody: "Account successfully created", msgError: false } });
             });
         }
-
     });
 });
 
@@ -52,33 +49,15 @@ userRouter.get('/logout', passport.authenticate('jwt', { session: false }), (req
     res.json({ user: { username: '', role: '' }, success: true })
 });
 
-userRouter.post('/incomingupdate', passport.authenticate('jwt', { session: false }), (req, res) => {
-    const incomingupdate = new IncomingUpdate(req.body);
-    incomingupdate.save(err => {
+
+userRouter.get('/meetingitems', passport.authenticate('jwt', { session: false }), (req, res) => {
+    User.findById({ _id: req.user._id }).populate('meetingitems').exec((err, document) => {
         if (err)
             res.status(500).json({ message: { msgBody: "Error has occured", msgError: true } });
         else {
-            req.user.incomingupdates.push(incomingupdate);
-            req.user.save(err => {
-                if (err)
-                    res.status(500).json({ message: { msgBody: "Error has occured", msgError: true } });
-                else
-                    res.status(200).json({ message: { msgBody: "Successfully created Incoming Update", msgError: false } });
-            });
+            res.status(200).json({ meetingitems: document.meetingitems, authenticated: true });
         }
     })
-
-});
-
-userRouter.get('/incomingupdates', passport.authenticate('jwt', { session: false }), (req, res) => {
-    User.findById({ _id: req.user._id }).populate('incomingupdates').exec((err, document) => {
-        if (err)
-            res.status(500).json({ message: { msgBody: "Error has occured", msgError: true } });
-        else {
-            res.status(200).json({ incomingupdates: document.incomingupdates, authenticated: true });
-        }
-    })
-
 });
 
 userRouter.get('/admin', passport.authenticate('jwt', { session: false }), (req, res) => {

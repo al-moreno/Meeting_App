@@ -1,0 +1,237 @@
+{
+        "id": 1,
+        "summary": "API Test",
+        "recordType": "ServiceTicket",
+        "board": {
+            "id": 1,
+            "name": "Tools Admin",
+            "_info": {
+                "board_href": ""
+            }
+        },
+        "status": {
+            "id": ,
+            "name": ">Closed",
+            "_info": {
+                "status_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/boards/1/statuses/17"
+            }
+        },
+        "workRole": {
+            "id": 5,
+            "name": "Consultant",
+            "_info": {
+                "workRole_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//time/workRoles/5"
+            }
+        },
+        "workType": {
+            "id": 3,
+            "name": "Regular",
+            "_info": {
+                "workType_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//time/workTypes/3"
+            }
+        },
+        "company": {
+            "id": 19301,
+            "identifier": "Funcshun",
+            "name": "Funcshun",
+            "_info": {
+                "company_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//company/companies/19301",
+                "mobileGuid": "6fc1b135-81e6-4b4f-bbf0-82e745dc26c9"
+            }
+        },
+        "site": {
+            "id": 1006,
+            "name": "Main",
+            "_info": {
+                "site_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//company/companies/19301/sites/1006",
+                "mobileGuid": "8d9d3303-bd12-4a0e-941c-b780cb71ae7a"
+            }
+        },
+        "siteName": "Main",
+        "addressLine1": "7270 NW 12th Street",
+        "addressLine2": "Suite 555",
+        "city": "Miami",
+        "stateIdentifier": "FL",
+        "zip": "33126",
+        "country": {
+            "id": 1,
+            "name": "United States",
+            "_info": {
+                "country_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//company/countries/1"
+            }
+        },
+        "contact": {
+            "id": 13,
+            "name": "Felipe Isaza",
+            "_info": {
+                "mobileGuid": "d49d5b7c-6c1f-48ae-b040-b905e4e30d08",
+                "contact_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//company/contacts/13"
+            }
+        },
+        "contactName": "Felipe Isaza",
+        "contactPhoneNumber": "7865193862",
+        "contactEmailAddress": "felipe@funcshun.com",
+        "type": {
+            "id": 209,
+            "name": "Process Consulting",
+            "_info": {
+                "type_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/boards/1/types/209"
+            }
+        },
+        "subType": {
+            "id": 10,
+            "name": "Meetings",
+            "_info": {
+                "subType_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/boards/1/subtypes/10"
+            }
+        },
+        "item": {
+            "id": 2,
+            "name": "Leadership Team",
+            "_info": {
+                "item_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/boards/1/items/2"
+            }
+        },
+        "team": {
+            "id": 1,
+            "name": "Eureka Process Team",
+            "_info": {
+                "team_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/boards/1/teams/1"
+            }
+        },
+        "priority": {
+            "id": 8,
+            "name": "Priority 3 - Medium",
+            "sort": 6,
+            "_info": {
+                "priority_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/priorities/8",
+                "image_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/priorities/8/image?lm=2011-01-04T18:47:55Z"
+            }
+        },
+        "serviceLocation": {
+            "id": 4,
+            "name": "Remote",
+            "_info": {
+                "location_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/locations/4"
+            }
+        },
+        "source": {
+            "id": 3,
+            "name": "Internal",
+            "_info": {
+                "source_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/sources/3"
+            }
+        },
+        "agreement": {
+            "id": 9,
+            "name": "EP - Diamond",
+            "_info": {
+                "agreement_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//finance/agreements/9"
+            }
+        },
+        "severity": "Medium",
+        "impact": "Medium",
+        "allowAllClientsPortalView": false,
+        "customerUpdatedFlag": false,
+        "automaticEmailContactFlag": false,
+        "automaticEmailResourceFlag": false,
+        "automaticEmailCcFlag": false,
+        "closedDate": "2018-09-21T16:28:47Z",
+        "closedBy": "AEdwards",
+        "closedFlag": true,
+        "actualHours": 1.55,
+        "approved": true,
+        "estimatedExpenseCost": 0.00,
+        "estimatedExpenseRevenue": 0.00,
+        "estimatedProductCost": 0.00,
+        "estimatedProductRevenue": 0.00,
+        "estimatedTimeCost": 0.00,
+        "estimatedTimeRevenue": 0.00,
+        "billingMethod": "ActualRates",
+        "subBillingMethod": "ActualRates",
+        "dateResolved": "2018-09-21T16:28:20Z",
+        "dateResplan": "2018-09-21T16:28:20Z",
+        "dateResponded": "2018-09-21T16:28:20Z",
+        "resolveMinutes": 28,
+        "resPlanMinutes": 0,
+        "respondMinutes": 0,
+        "isInSla": true,
+        "resources": "Allen",
+        "hasChildTicket": false,
+        "hasMergedChildTicketFlag": false,
+        "billTime": "Billable",
+        "billExpenses": "Billable",
+        "billProducts": "Billable",
+        "location": {
+            "id": 11,
+            "name": "Headquarters",
+            "_info": {
+                "location_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//system/locations/11"
+            }
+        },
+        "department": {
+            "id": 1,
+            "identifier": "Process",
+            "name": "Eureka Process",
+            "_info": {
+                "department_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//system/departments/1"
+            }
+        },
+        "mobileGuid": "cb2652f6-f599-4557-889a-c5af8ed9faff",
+        "sla": {
+            "id": 2,
+            "name": "Standard SLA",
+            "_info": {
+                "sla_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/SLAs/2"
+            }
+        },
+        "slaStatus": "Resolved",
+        "currency": {
+            "id": 7,
+            "symbol": "$",
+            "currencyCode": "USD",
+            "decimalSeparator": ".",
+            "numberOfDecimals": 2,
+            "thousandsSeparator": ",",
+            "negativeParenthesesFlag": false,
+            "displaySymbolFlag": true,
+            "currencyIdentifier": "USD",
+            "displayIdFlag": false,
+            "rightAlign": false,
+            "name": "US Dollars",
+            "_info": {
+                "currency_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//finance/currencies/7"
+            }
+        },
+        "_info": {
+            "lastUpdated": "2020-04-02T22:59:57Z",
+            "updatedBy": "AEdwards",
+            "dateEntered": "2018-09-19T23:28:07Z",
+            "enteredBy": "template121",
+            "activities_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//sales/activities?conditions=ticket/id=101",
+            "scheduleentries_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//schedule/entries?conditions=type/id=4 AND objectId=101",
+            "documents_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//system/documents?recordType=Ticket&recordId=101",
+            "configurations_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/tickets/101/configurations",
+            "tasks_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/tickets/101/tasks",
+            "notes_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//service/tickets/101/notes",
+            "products_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//procurement/products?conditions=chargeToType='Ticket' AND chargeToId=101",
+            "timeentries_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//time/entries?conditions=(chargeToType='ServiceTicket' OR chargeToType='ProjectTicket') AND chargeToId=101",
+            "expenseEntries_href": "https://api-na.myconnectwise.net/v4_6_release/apis/3.0//expense/entries?conditions=(chargeToType='ServiceTicket' OR chargeToType='ProjectTicket') AND chargeToId=101"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "caption": "Suggested Fit Position:",
+                "type": "Text",
+                "entryMethod": "EntryField",
+                "numberOfDecimals": 0
+            },
+            {
+                "id": 2,
+                "caption": "Reason Not Hired",
+                "type": "Text",
+                "entryMethod": "List",
+                "numberOfDecimals": 0
+            }
+        ]
+    },
