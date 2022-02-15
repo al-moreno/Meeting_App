@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import AuthService from '../Services/AuthService';
-import { AuthContext } from '../Context/AuthContext';
-import Image from '../images/Eureka-logo.png';
+import AuthService from '../../Services/Auth';
+import { AuthContext } from '../../Context/AuthContext';
+import Image from '../../images/Eureka-logo.png';
 
 const Navbar = props => {
     const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);

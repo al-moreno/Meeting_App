@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import AuthService from '../Services/AuthService';
-import Message from '../Components/Message';
-import { AuthContext } from '../Context/AuthContext';
+import AuthService from '../../Services/Auth';
+import Message from '../Message/Message';
+import { AuthContext } from '../../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Login = props => {
@@ -44,7 +44,6 @@ const Login = props => {
                                             <input type="text" className="form-control form-control-lg"
                                                 name='username'
                                                 onChange={onChange}
-                                                className="form-control"
                                                 placeholder="Enter Username" />
                                         </div>
                                         <div className="form-outline mb-3">
@@ -52,12 +51,11 @@ const Login = props => {
                                             <input type="password" className="form-control form-control-lg"
                                                 name='password'
                                                 onChange={onChange}
-                                                className="form-control"
                                                 placeholder="Enter Password" />
                                         </div>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col text-center">
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col text-center">
                                                     <button className="btn btn-lg btn-primary btn-block" type='submit'>Log in</button>
                                                 </div>
                                             </div>

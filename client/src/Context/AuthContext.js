@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import AuthService from '../Services/AuthService';
+import AuthService from '../Services/Auth';
 
 export const AuthContext = createContext();
 
@@ -19,7 +19,9 @@ export default ({ children }) => {
 
     return (
         <div>
-            {!isLoaded ? <h1>Loading...</h1> :
+            {!isLoaded ? <h1>Loading
+                <i class="fa fa-spinner fa-spin"></i>
+            </h1> :
                 <AuthContext.Provider value={{ user, setUser, isAuthenticated, setIsAuthenticated }}>
                     {children}
                 </AuthContext.Provider>}
