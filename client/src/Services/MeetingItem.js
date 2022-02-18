@@ -24,15 +24,21 @@ export default {
                 return { message: { msgBody: 'Unathorized' }, msgError: true };
         });
     },
-    deleteMeetingItem: meetingItemId =>{
-        return fetch('/api/meetingitem/'+ meetingItemId, {
-            method: 'delete'
-        }).then(response => {
+
+
+
+    deleteMeetingItem: async (meetingItemId) => {
+        try {
+            const response = await fetch('/api/meetingitem/' + meetingItemId, {
+                method: 'delete'
+            })
             if (response.status !== 401) {
-                return response.json().then(data => data);
+                const data = await response.json()
+                return data
             }
-            else
-                return { message: { msgBody: 'Unathorized' }, msgError: true };
-        });
+            return { message: { msgBody: 'Unathorized' }, msgError: true };
+        } catch (error) {
+            return { message: { msgBody: 'Server Error' }, msgError: true };
+        }
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import MeetingItem from './MeetingItem';
 import Message from '../Message/Message';
-import MeetingService from '../../Services/MeetingItem';
+import MeetingItemService from '../../Services/MeetingItem';
 import AuthContext from '../../Context/AuthContext';
 
 const defaultFormData = { item: "" };
@@ -14,15 +14,21 @@ const MeetingItems = prop => {
     const authContext = useContext(AuthContext);
 
     useEffect(() => {
-        MeetingService.getMeetingItems().then(data => {
+        MeetingItemService.getMeetingItems().then(data => {
             setMeetingItems(data.meetingitems);
         });
     }, []);
 
+    const deleteMeetingItem = async (id) =>{
+        const result = await MeetingItemService.deleteMeetingItem(id); 
+        setMeetingItems(meetingItems.filter((meetingItem)=>{
+            return meetingItem._id !== id
+        }))
+    }
 
     const onSubmit = e => {
         e.preventDefault();
-        MeetingService.postMeetingItem({...formData, category:prop.category}).then(data => {
+        MeetingItemService.postMeetingItem({...formData, category:prop.category}).then(data => {
             const { message, meetingitem } = data;
             resetForm();
             // if successfully created a incomingupdate
@@ -59,8 +65,8 @@ const MeetingItems = prop => {
             <div className="mt-5">
                 <div className="list-group">
                     {
-                        meetingItems.map(meetingitem => {
-                            return <MeetingItem key={meetingitem._id} meetingitem={meetingitem} category={prop.category}/>
+                        meetingItems.map(meetingItem => {
+                            return <MeetingItem key={meetingItem._id} delete={()=>deleteMeetingItem(meetingItem._id)} meetingitem={meetingItem} category={prop.category}/>
                         })
                     }
                 </div>
